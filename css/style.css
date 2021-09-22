@@ -1,6 +1,75 @@
+/***************************************************/
+
+
+/*   GLOBAL                                        */
+
+
+/***************************************************/
+
 * {
-    background-image: url("../assets/img/arcbzc_estacion_gral.png");
+    font-family: "Archivo"
+}
+
+body {
+    /* background-image: url("../assets/img/arcbzc_estacion_gral.png"); 
     background-blend-mode: soft-light;
-    background-size: 100%;
-    background-color: rgb(231, 231, 231);
+    background-size: 100%; */
+    background-color: white;
+}
+
+
+/***************************************************/
+
+
+/*   DESKTOP                                       */
+
+
+/***************************************************/
+
+
+/***************** COMPONENTES *****************/
+
+h1 {
+    font-weight: 500;
+}
+
+
+/****** MOBILE ******/
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer a {
+    color: white;
 }
