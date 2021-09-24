@@ -13,10 +13,19 @@ body {
 
 a {
     color: white;
-    padding: 14px 20px;
+    padding: 20px;
     text-decoration: none;
     text-align: center;
 }
+
+  /*******  MOBILE  ***********************************/
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 600px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+      }
+  }
 
 /***************** COMPONENTES ***************************/
 
@@ -26,7 +35,9 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 14px 16px;
+    padding: 16px; 
+    padding-left: 0%;
+    margin-bottom: 15px;
     /*background-color: #333;*/
 }
 
@@ -43,9 +54,17 @@ a {
     background-color: teal;
 }
 
+.container {
+    display: flex;
+    flex: 100%;
+    padding-top: 10%;
+    flex-direction: column;
+}
+
+
 .section {
-    position: fixed;
-    padding: 30px;
+    flex: 70%;
+    padding-top: 5%;
 }
 
 .footer {
@@ -66,6 +85,10 @@ a {
     width: 100%;
     color: white;
     padding: 5px;
+}
+
+.iframe {
+    position: fixed;
 }
 
 /*********  TABLET  ***********************************/
@@ -78,11 +101,3 @@ a {
 */
 
 
-  /*******  MOBILE  ***********************************/
-  /* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-    .navbar a {
-        float: none;
-        width: 100%;
-      }
-  }
