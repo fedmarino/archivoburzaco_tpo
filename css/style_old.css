@@ -1,0 +1,103 @@
+/*********** GLOBAL ****************************************/
+
+* {
+    font-family: "Archivo"
+}
+
+body {
+    /* background-image: url("../assets/img/arcbzc_estacion_gral.png"); 
+    background-blend-mode: soft-light;
+    background-size: 100%; */
+    background-color: rgb(146, 174, 185);
+}
+
+h1 {
+    font-weight: 500;
+}
+
+/***************** COMPONENTES ***************************/
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*background-color: #333;*/
+}
+
+.footer {
+    display: flex;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+
+ .container {
+    display: flex;
+    position: fixed;
+}
+
+
+/************ DESKTOP ***************************************/
+
+
+@media screen and (max-width: 660px) {
+    .section, .navbar {   
+      flex-direction: column;
+    }
+
+    .navbar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /*background-color: #333;*/
+    }
+    
+    .footer {
+        display: flex;
+        position: fixed;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        background-color: black;
+        padding: 20px; 
+    }
+    
+    .section {  
+        display: flex;
+        flex-wrap: wrap;
+      }
+    
+     .container {
+        display: flex;
+        position: fixed;
+    }
+  }
+
+
+/****** MOBILE ******/
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.footer a {
+    color: white;
+    text-align: center;
+}
