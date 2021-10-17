@@ -1,14 +1,15 @@
 /*********** GLOBAL ****************************************/
 
+
 * {
-    font-family: "Archivo"
-}
+    font-family: "Archivo";
+    }
 
 body {
     /* background-image: url("../assets/img/arcbzc_estacion_gral.png"); 
     background-blend-mode: soft-light;
     background-size: 100%; */
-    background-color: rgb(146, 174, 185);
+    background: rgb(0, 63, 102);
 }
 
 a {
@@ -19,8 +20,20 @@ a {
 }
 
   /*******  MOBILE  ***********************************/
-  /* On screens that are 600px or less, set the background color to olive */
+  /* On screens that are 600px or less */
   @media screen and (max-width: 600px) {
+    .navbar {
+        position: flex;
+        display: inline-block;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        padding: 5%; 
+        padding-left: 0%;
+        margin-block: 5%;
+        /*background-color: #333;*/
+    }
+
     .navbar a {
         float: none;
         width: 100%;
@@ -54,13 +67,12 @@ a {
     background-color: teal;
 }
 
-.container {
+.main_container {
     display: flex;
     flex: 100%;
-    padding-top: 10%;
+    padding-top: 20%;
     flex-direction: column;
 }
-
 
 .section {
     flex: 70%;
@@ -77,18 +89,15 @@ a {
     padding: 5px;
 }
 
-.footer {
-    position: fixed;
-    text-align: center;
-    left: 0%;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    padding: 5px;
-}
-
 .iframe {
     position: fixed;
+}
+
+.item {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
 }
 
 /*********  TABLET  ***********************************/
