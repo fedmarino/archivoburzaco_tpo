@@ -3,6 +3,7 @@
 
 * {
     font-family: "Archivo";
+    font-size: 1.05em;
     }
 
 body {
@@ -10,19 +11,29 @@ body {
     background-blend-mode: soft-light;
     background-size: 100%; */
     background: rgb(0, 63, 102);
+    
 }
 
 a {
-    color: white;
-    padding: 20px;
+    color: rgb(246, 242, 225);
     text-decoration: none;
     text-align: center;
 }
 
+
   /*******  MOBILE  ***********************************/
   /* On screens that are 600px or less */
+/*
   @media screen and (max-width: 600px) {
-    .navbar {
+    nav ul {
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex-direction: column;        
+    }
+
+    /*    .navbar {
         position: flex;
         display: inline-block;
         top: 0%;
@@ -31,7 +42,6 @@ a {
         padding: 5%; 
         padding-left: 0%;
         margin-block: 5%;
-        /*background-color: #333;*/
     }
 
     .navbar a {
@@ -39,9 +49,10 @@ a {
         width: 100%;
       }
   }
+*/
 
 /***************** COMPONENTES ***************************/
-
+/*
 .navbar {
     position: fixed;
     display: block;
@@ -51,10 +62,9 @@ a {
     padding: 16px; 
     padding-left: 0%;
     margin-bottom: 15px;
-    /*background-color: #333;*/
+    /*background-color: #333;
 }
 
-/*
 .navbar a {
     color: white;
     padding: 14px 20px;
@@ -63,23 +73,76 @@ a {
 }
 */
 
-.navbar :hover{
-    background-color: teal;
+
+/***************** navigation bar ***************************/
+
+header{
+    position: fixed;
+    width: 100%;
 }
 
-.main_container {
-    display: flex;
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo_png{
+    height: 2em;
+    float: left;
+    /*    overflow: hidden;
+    margin-top: -6px;
+*/
+} 
+
+nav {
+    float: right;
+}
+
+nav a {
+    margin: 0em;
+    padding: 0.5em;
+}
+
+nav a:hover{
+    color: rgb(0, 63, 102);
+    background-color: rgb(246, 242, 225);
+}
+
+nav a::before{  
+    content: '';
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+nav ul {
+    margin: 0;
+    align-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.container {
+    display: inline-block;
+    width: 80%;
+    margin: 1em;
+/*    display: flex;
     flex: 100%;
     padding-top: 20%;
     flex-direction: column;
-}
-
-.section {
-    flex: 70%;
-    padding-top: 5%;
+*/
 }
 
 .footer {
+    font-size: 0.8em;
     position: fixed;
     text-align: center;
     left: 0%;
@@ -91,13 +154,6 @@ a {
 
 .iframe {
     position: fixed;
-}
-
-.item {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    text-align: center;
 }
 
 /*********  TABLET  ***********************************/
