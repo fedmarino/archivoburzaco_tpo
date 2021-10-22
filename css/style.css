@@ -1,168 +1,240 @@
 /*********** GLOBAL ****************************************/
+/*
+breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 1024px
+*/
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+  }
 
-* {
-    font-family: "Archivo";
-    font-size: 1.05em;
-    }
+:root {
+    --primary: rgb(0, 63, 102);
+    --secondary: rgb(0, 102, 102);
+    --alternative_a: rgb(120, 71, 84);
+    --alternative_b: rgb(139, 138, 176);
+    --light: rgba(246, 242, 225);
+}
 
 body {
     /* background-image: url("../assets/img/arcbzc_estacion_gral.png"); 
     background-blend-mode: soft-light;
     background-size: 100%; */
-    background: rgb(0, 63, 102);
-    
+    margin: 0;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--light);
+    color: var(--primary);
+    font-family: "Archivo";
+    position: relative;
+    padding-top: 7em;
 }
 
-a {
-    color: rgb(246, 242, 225);
-    text-decoration: none;
+
+
+
+/* MOBILE * navigation bar **************************************/
+
+.top {
+    background: var(--primary);
     text-align: center;
-}
-
-
-  /*******  MOBILE  ***********************************/
-  /* On screens that are 600px or less */
-/*
-  @media screen and (max-width: 600px) {
-    nav ul {
-        display: inline-flex;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        flex-direction: column;        
-    }
-
-    /*    .navbar {
-        position: flex;
-        display: inline-block;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        padding: 5%; 
-        padding-left: 0%;
-        margin-block: 5%;
-    }
-
-    .navbar a {
-        float: none;
-        width: 100%;
-      }
-  }
-*/
-
-/***************** COMPONENTES ***************************/
-/*
-.navbar {
-    position: fixed;
-    display: block;
+    position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    padding: 16px; 
-    padding-left: 0%;
-    margin-bottom: 15px;
-    /*background-color: #333;
-}
-
-.navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
-*/
-
-
-/***************** navigation bar ***************************/
-
-header{
-    position: fixed;
     width: 100%;
 }
-
-header::after{
-    content: '';
-    display: table;
-    clear: both;
-}
-
-.logo_png{
-    height: 2em;
-    float: left;
-    /*    overflow: hidden;
-    margin-top: -6px;
-*/
-} 
 
 nav {
-    float: right;
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    width: 22%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 250ms ease-in-out;
+    z-index: 9999;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    padding-top: 5px;
+    position: relative;
 }
 
 nav a {
-    margin: 0em;
-    padding: 0.5em;
+    color: rgb(246, 242, 225);
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover{
     color: rgb(0, 63, 102);
     background-color: rgb(246, 242, 225);
+    transition: opacity 150ms ease-in-out;
 }
 
-nav a::before{  
-    content: '';
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 150ms ease-in-out 150ms;
+}
+
+.nav-toggle {
+    display:none;
+}
+
+.nav-toggle-label {
     position: absolute;
-    transition: all ease-in-out 250ms;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    /*border: 1px solid red;*/
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-nav ul {
-    margin: 0;
-    align-content: center;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    font-weight: 400;
-    display: inline-block;
-    margin-left: 70px;
-    padding-top: 5px;
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: rgb(246, 242, 225);
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
     position: relative;
 }
 
-.container {
-    display: inline-block;
-    width: 80%;
-    margin: 1em;
-/*    display: flex;
-    flex: 100%;
-    padding-top: 20%;
-    flex-direction: column;
-*/
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
 }
 
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+    top: 7px;
+}
+
+.logo_png{
+    height: 2.5em;
+    float: left;
+    margin: 1.5em;
+}
+
+.hora-en-burzaco {
+    pointer-events: none;
+    cursor: default;
+ }
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: -1;
+    margin-left: 1.5em;
+    width: auto;
+    border: 1px solid red;
+    /*
+    background-image: url(//unsplash.it/1000/1000);
+    background-blend-mode: multiply;
+    background-size: cover;
+    */
+  }
+
+.cube {
+      width: 50px;
+      height: 50px;
+      background: red;
+  }
+
 .footer {
-    font-size: 0.8em;
-    position: fixed;
+    margin-top: auto;
+    font-size: 1.5em;
+    position: relative;
     text-align: center;
     left: 0%;
     bottom: 0;
     width: 100%;
-    color: white;
-    padding: 5px;
+    padding: 1em;
+    color: var(--light);
+    background-color: var(--primary);
+    display: flexbox;
+    justify-content: center;
+    
 }
 
-.iframe {
-    position: fixed;
+.footer a {
+    height: 10px;
+    margin-inline: 0.7em;
+    text-decoration: none;
+    color: var(--light);
 }
 
-/*********  TABLET  ***********************************/
-/*
-@media screen and (max-width: 992px) {
-    body {
+.container {
+    display: flexbox;
+    align-items: center;
+}
 
+/**************************************************************/
+/* DESKTOP ***************************************************/
+
+@media screen and (min-width: 768px) {
+    .nav-toggle-label{
+        display: none;
     }
-  }
-*/
 
+    .top {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 2 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav a {
+        opacity: 1;
+    }
+
+    nav ul {
+        display: flex;
+        /*justify-content: space-between;*/
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+}
 
