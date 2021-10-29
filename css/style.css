@@ -1,9 +1,9 @@
 /*********** GLOBAL ****************************************/
 /*
 breakpoints: (
-  'phone': 320px,
-  'tablet': 768px,
-  'desktop': 1024px
+  'phone': 320px, ok
+  'tablet': 768px, ok
+  'desktop': 1024px 
 */
 
 *,
@@ -19,6 +19,7 @@ breakpoints: (
     --alternative_a: rgb(120, 71, 84);
     --alternative_b: rgb(139, 138, 176);
     --light: rgba(246, 242, 225);
+
 }
 
 body {
@@ -36,10 +37,13 @@ body {
     padding-top: 5.5em;
 }
 
+.animate__animated {
+    animation-duration: 3.5s;
+    animation-fill-mode: both;
+    animation-delay: 0s;
+}
 
-
-
-/* MOBILE * navigation bar **************************************/
+/* MOBILE 320px * navigation bar **************************************/
 
 .top {
     background: var(--primary);
@@ -56,7 +60,7 @@ nav {
     top: 100%;
     right: 0;
     background: var(--primary);
-    width: 22%;
+    width: 100%;
     transform: scale(1,0);
     transform-origin: top;
     transition: transform 250ms ease-in-out;
@@ -134,11 +138,11 @@ nav a:hover{
 }
 
 .nav-toggle-label span::before{
-    bottom: 7px;
+    bottom: 10px;
 }
 
 .nav-toggle-label span::after{
-    top: 7px;
+    top: 10px;
 }
 
 .logo_png{
@@ -162,51 +166,138 @@ nav a:hover{
     margin-left: 1.5em;
     width: auto;
     border: 1px solid red;
-    /*
-    background-image: url(//unsplash.it/1000/1000);
-    background-blend-mode: multiply;
-    background-size: cover;
-    */
   }
 
-.preservar {
-    position: relative;
+.main-index {
     display: flex;
+    flex-direction: column;
 }
 
-.recopilar {
-    position: relative;
-    display: flex;
-}
-
-.intro img {
+ .main-index img {
     opacity: 0.5;
+    object-fit: cover;
 }
 
-.preservar h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary);
-    text-align: center;
-}
-
-.recopilar-texto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary);
-    text-align: center;
-}
-
-
-.cube {
-      width: 50px;
-      height: 50px;
-      background: red;
+.center-aligned {
+    display: box;
+    display: flex;
+    box-align: center;
+    align-items: center;
+    box-pack: center;
+    justify-content: center;
   }
+
+.bloque_1 {
+    display: flex;
+    width: 100wv;
+    padding: 0%;
+   /* position: absolute;
+    align-items: center;
+    justify-content: center;*/
+}
+
+.bloque_2 {
+    display: flex;
+    width: 100wv;
+    padding: 0%;
+   /* position: absolute;
+    align-items: center;
+    justify-content: center;*/
+}
+
+.bloque_2 .subtexto {
+    font-weight: 500;
+    font-size: 3vw;
+    font-style: oblique;
+    padding: 1em;
+}
+
+.bloque_3 .subtexto {
+    font-weight: 600;
+    font-size: 4vw;
+}
+
+.bloque_3 button {
+    margin-top: 0.2em;
+    padding: 0.25em;
+    font-weight: 600;
+    font-size: 4vw;
+    color: var(--light);
+    border: 0px;
+    background-color: rgba(246, 242, 225, 0);
+}
+
+.bloque_3 button :hover {
+    padding: 0.25em;
+    color: var(--light);
+    background-color: var(--secondary);
+    border: 0px;
+}
+
+
+
+
+.abierto_texto {
+    position: absolute;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 700;
+    text-align: right;
+    font-size: 5vw;
+    margin: 0;
+}
+
+.subtexto {
+    position: absolute;
+    color: var(--primary);
+    text-align: center;
+}
+
+/*********************************************/
+/* HISTORIA **********************************/
+
+.main_about .bloque_1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 1em;
+}
+
+.main_about div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0%;
+}
+
+.main_about .bloque_1 .title {
+    font-weight: 600;
+    font-size: 4vw;
+    background-color: var(--alternative_b);
+    color: var(--light);
+    padding: 0.2em;
+    margin-bottom: 0.1em;
+}
+
+.main_about .bloque_1 p {
+    margin-bottom: 2em;
+}
+
+.main_about ul {
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    list-style: none;
+}
+
+.main_about li {
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    padding-top: 5px;
+    position: relative;
+}
+
+/******************************/
 
 .footer {
     margin-top: auto;
@@ -231,14 +322,11 @@ nav a:hover{
     color: var(--light);
 }
 
-.container {
-    display: flexbox;
-    align-items: center;
-}
+
 
 /* contact.html ***************************************************/
 
-.contacto {
+/*.contacto {
     background-color: var(--light);
     height: 100%;
 }
@@ -249,18 +337,112 @@ nav a:hover{
     padding-bottom: 1.5em;
     padding-top: 1.5em;
 }
+*/
 
-.formulario-contacto > button {
-    background-color: var(--secondary);
+/**************************/
+
+.form {
+    margin-top: 2em;
+}
+
+.form-control {
+    margin-bottom: 10px;
+	padding-bottom: 2px;
+	position: relative;
+    background-color: rgba(179, 152, 32, 0);
     border: 0;
 }
 
-.formulario-contacto > button:hover {
+.form-control div {
+    height: 100%;	
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#form > div.form-check.mb-3 {
+    margin-left: 0.7em;
+}
+
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 2px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control textarea {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: var(--secondary);
+}
+
+.form-control.success textarea {
+	border-color: var(--secondary);
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control.error textarea {
+	border-color: #e74c3c;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: relative;
+	top: 0.1em;
+    bottom: 0;
+	left: 0.2em;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form button {
+    background-color: var(--secondary);
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.form > button:hover {
     background-color: var(--secondary-light);
 }
 
 /**************************************************************/
-/* DESKTOP ***************************************************/
+/* TABLET + DESKTOP >768px ************************************/
 
 @media screen and (min-width: 768px) {
     .nav-toggle-label{
@@ -294,4 +476,10 @@ nav a:hover{
         margin-bottom: 0;
     }
 }
+
+/*****************************************************/
+
+
+
+
 
