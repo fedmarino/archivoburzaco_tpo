@@ -43,6 +43,12 @@ body {
     animation-delay: 0s;
 }
 
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
 /* MOBILE 320px * navigation bar **************************************/
 
 .top {
