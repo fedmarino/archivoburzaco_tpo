@@ -37,6 +37,7 @@ body {
     padding-top: 5.5em;
 }
 
+
 .animate__animated {
     animation-duration: 3.5s;
     animation-fill-mode: both;
@@ -233,15 +234,17 @@ nav a:hover{
     background-color: rgba(246, 242, 225, 0);
 }
 
+.bloque_3 a {
+    text-decoration: none; 
+    color: var(--primary);
+}
+
 .bloque_3 button :hover {
     padding: 0.25em;
     color: var(--light);
     background-color: var(--secondary);
     border: 0px;
 }
-
-
-
 
 .abierto_texto {
     position: absolute;
