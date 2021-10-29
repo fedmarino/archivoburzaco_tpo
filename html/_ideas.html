@@ -4,6 +4,7 @@ IDEAS
 --- hora-en-burzaco
 --- clima
 --- radio
+--- noticias
 
 
 2. Hacer un footer reproductor con 2 streams:
@@ -13,3 +14,21 @@ IDEAS
 3. Desarrollar seccion juegos
 
 4. Desarrollar seccion GRANDES PERSONALIDADES
+
+
+
+
+1. elemento flotante 
+
+// SOCIAL PANEL JS
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+floating_btn.addEventListener('click', () => {
+	social_panel_container.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible')
+});
